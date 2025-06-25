@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Rompecabezas Interactivo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h2>Rompecabezas Interactivo</h2>
+
+    <div id="controls">
+      <label for="level">Nivel:</label>
+      <select id="level">
+        <option value="facil">Fácil (3x3)</option>
+        <option value="intermedio">Intermedio (5x5)</option>
+        <option value="avanzado">Avanzado (8x8)</option>
+      </select>
+      <button onclick="cargarImagen()">Generar</button>
+    </div>
+
+    <img
+      id="source-image"
+      alt="Imagen del rompecabezas"
+      style="display: none"
+    />
+
+    <div id="puzzle-container"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
