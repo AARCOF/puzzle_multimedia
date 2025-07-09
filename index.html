@@ -1,31 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Rompecabezas Interactivo</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <h2>Rompecabezas Interactivo</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventuras Numéricas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Aventuras Numéricas</h1>
 
-    <div id="controls">
-      <label for="level">Nivel:</label>
-      <select id="level">
-        <option value="facil">Fácil (3x3)</option>
-        <option value="intermedio">Intermedio (5x5)</option>
-        <option value="avanzado">Avanzado (8x8)</option>
-      </select>
-      <button onclick="cargarImagen()">Generar</button>
+    <div class="score-level">
+        <div>Puntuación: 0</div>
+        <div>Nivel: 1</div>
     </div>
 
-    <img
-      id="source-image"
-      alt="Imagen del rompecabezas"
-      style="display: none"
-    />
+    <div class="game-setup">
+        <div class="level-selection">
+            <p>Selecciona un nivel:</p>
+            <div class="level-selection-buttons">
+                <button class="option" onclick="showOptions('facil')">Fácil</button>
+                <button class="option" onclick="showOptions('medio')">Medio</button>
+                <button class="option" onclick="showOptions('dificil')">Difícil</button>
+            </div>
+        </div>
 
-    <div id="puzzle-container"></div>
+        <div class="number-options-wrapper">
+            <div id="numberOptions" class="number-options"></div>
+        </div>
+
+        <div class="start-button-container">
+            <button class="button" id="startButton" onclick="startGame()">Iniciar Juego</button>
+            <button class="button" id="pauseButton" onclick="pauseGame()" style="display:none;">Pausar Juego</button>
+        </div>
+    </div>
+
+    <div class="game-area" id="gameArea">
+        <div class="character" id="character"></div>
+    </div>
 
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
